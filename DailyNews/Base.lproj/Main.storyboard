@@ -53,7 +53,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IYd-cI-EEa">
-                                <rect key="frame" x="20" y="109" width="374" height="753"/>
+                                <rect key="frame" x="0.0" y="109" width="414" height="753"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -61,8 +61,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="IYd-cI-EEa" secondAttribute="bottom" id="2us-L2-wrw"/>
-                            <constraint firstItem="IYd-cI-EEa" firstAttribute="leading" secondItem="ItU-rX-NCX" secondAttribute="leadingMargin" id="Hb6-ic-8Vt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IYd-cI-EEa" secondAttribute="trailing" id="PU6-dq-Lrr"/>
+                            <constraint firstItem="IYd-cI-EEa" firstAttribute="leading" secondItem="ItU-rX-NCX" secondAttribute="leading" id="FwK-re-hNW"/>
+                            <constraint firstAttribute="trailing" secondItem="IYd-cI-EEa" secondAttribute="trailing" id="Pxz-fG-x2C"/>
                             <constraint firstItem="wkc-SE-IVa" firstAttribute="trailing" secondItem="gQT-KU-3FO" secondAttribute="trailing" constant="10" id="QrQ-M4-2Ny"/>
                             <constraint firstItem="gQT-KU-3FO" firstAttribute="leading" secondItem="wkc-SE-IVa" secondAttribute="leading" constant="10" id="XkJ-kL-H7y"/>
                             <constraint firstItem="gQT-KU-3FO" firstAttribute="top" secondItem="wkc-SE-IVa" secondAttribute="top" constant="10" id="cHB-IO-avW"/>
