@@ -36,6 +36,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 //        let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
         let cell = newsTableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell", for: indexPath) as! NewsTableViewCell
         cell.labelNewsTitle.text = animals[indexPath.row]
+        cell.imageViewNewsImage.image = UIImage(named: "Newspaper")
         return cell
     }
 
