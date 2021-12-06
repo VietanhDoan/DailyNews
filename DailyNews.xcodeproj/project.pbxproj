@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21097B7C275DA18100F955AB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21097B7B275DA18100F955AB /* HomeViewController.swift */; };
 		2183828A275B6CEE00096E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21838289275B6CEE00096E58 /* AppDelegate.swift */; };
 		2183828C275B6CEE00096E58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2183828B275B6CEE00096E58 /* SceneDelegate.swift */; };
 		2183828E275B6CEE00096E58 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2183828D275B6CEE00096E58 /* SplashController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21097B7B275DA18100F955AB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		21838286275B6CEE00096E58 /* DailyNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21838289275B6CEE00096E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2183828B275B6CEE00096E58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		21838288275B6CEE00096E58 /* DailyNews */ = {
 			isa = PBXGroup;
 			children = (
+				21097B7B275DA18100F955AB /* HomeViewController.swift */,
 				21838289275B6CEE00096E58 /* AppDelegate.swift */,
 				2183828B275B6CEE00096E58 /* SceneDelegate.swift */,
 				2183828D275B6CEE00096E58 /* SplashController.swift */,
@@ -140,6 +143,7 @@
 				2183828E275B6CEE00096E58 /* SplashController.swift in Sources */,
 				2183828A275B6CEE00096E58 /* AppDelegate.swift in Sources */,
 				2183828C275B6CEE00096E58 /* SceneDelegate.swift in Sources */,
+				21097B7C275DA18100F955AB /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

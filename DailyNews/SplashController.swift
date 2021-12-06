@@ -11,9 +11,13 @@ class SplashController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // Open Home screen
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeVC, animated: true)
+        }
     }
-
 
 }
 
