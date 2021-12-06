@@ -28,6 +28,9 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        
         let parameters = ["q": "bitcoin", "apiKey": "8cda2c5ccb064475946211d4fb8523e7"]
         
         AF.request("https://newsapi.org/v2/everything", method: .get, parameters: parameters).responseJSON { response in
@@ -58,6 +61,10 @@ class HomeViewController: UIViewController {
         }
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     
 
 }
@@ -79,6 +86,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let newsDetailController = self.storyboard?.instantiateViewController(withIdentifier: "NewsDetailController") as! NewsDetailController
+        let article = self.listNews[indexPath.row]
+        newsDetailController.article = article
+        self.navigationController?.pushViewController(newsDetailController, animated: true)
     }
 
 }
