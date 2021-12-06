@@ -7,4 +7,5 @@ target 'DailyNews' do
 
   # Pods for DailyNews
   pod 'Alamofire', '~> 5.4'
+  pod 'SDWebImage', '~> 5.0'
 end

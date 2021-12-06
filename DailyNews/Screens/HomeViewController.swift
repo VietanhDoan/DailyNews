@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     
     let animals: [String] = ["Horse", "Cow", "Camel", "Sheep", "Goat"]
     let cellReuseIdentifier = "NewsTableViewCell"
+    var listNews : [Article] = []
     
     let endpointSample = "https://newsapi.org/v2/everything?q=bitcoin&apiKey=8cda2c5ccb064475946211d4fb8523e7"
     
@@ -29,11 +30,9 @@ class HomeViewController: UIViewController {
         let parameters = ["q": "bitcoin", "apiKey": "8cda2c5ccb064475946211d4fb8523e7"]
         
         AF.request("https://newsapi.org/v2/everything", method: .get, parameters: parameters).responseJSON { response in
-            print(response)
             let data = response.data
             
-            print(data!)
-            
+            var newsResponse: NewsResponse
             if let contentType = response.response?.allHeaderFields["Content-Type"] as? String {
                 if let _ = contentType.range(of: "application/json") {
                     do {
@@ -42,7 +41,11 @@ class HomeViewController: UIViewController {
                         if data!.count > 0 {
                             json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
                         }
-                        print(json!)
+                        
+                        if let jsonData = json as? [String: Any] {
+                            newsResponse = NewsResponse(info: jsonData)
+                            self.listNews = newsResponse.articles ?? []
+                        }
                     } catch _ as NSError {
                         print("error")
                     }
