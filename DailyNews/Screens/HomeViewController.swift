@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import SDWebImage
 
 class HomeViewController: UIViewController {
 
@@ -45,6 +46,7 @@ class HomeViewController: UIViewController {
                         if let jsonData = json as? [String: Any] {
                             newsResponse = NewsResponse(info: jsonData)
                             self.listNews = newsResponse.articles ?? []
+                            self.newsTableView.reloadData()
                         }
                     } catch _ as NSError {
                         print("error")
@@ -63,19 +65,20 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return animals.count
+        return self.listNews.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = newsTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! NewsTableViewCell
-        cell.labelNewsTitle.text = animals[indexPath.row]
-        cell.imageViewNewsImage.image = UIImage(named: "Newspaper")
+        cell.labelNewsTitle.text = self.listNews[indexPath.row].title
+        cell.labelNewsDescription.text = self.listNews[indexPath.row].description
+        cell.imageViewNewsImage.sd_setImage(with: URL(string: self.listNews[indexPath.row].urlToImage ?? ""), completed: nil)
         return cell
     }
 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 150
     }
 
 }
