@@ -18,6 +18,7 @@ class NewsDetailController: UIViewController {
         super.viewDidLoad()
         labelTitle.text = article?.title
         labelContent.text = article?.content
+        labelContent.sizeToFit()
         imageViewImage.sd_setImage(with: URL(string: article?.urlToImage ?? ""), completed: nil)
     }
 }
