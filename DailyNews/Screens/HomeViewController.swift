@@ -19,6 +19,8 @@ class HomeViewController: UIViewController {
     
     let endpointSample = "https://newsapi.org/v2/everything?q=bitcoin&apiKey=8cda2c5ccb064475946211d4fb8523e7"
     
+    var category : String! = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -29,11 +31,11 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+//        navigationController?.setNavigationBarHidden(true, animated: animated)
         
-        let parameters = ["q": "bitcoin", "apiKey": "8cda2c5ccb064475946211d4fb8523e7"]
+        let parameters = ["category": category, "apiKey": "8cda2c5ccb064475946211d4fb8523e7"]
         
-        AF.request("https://newsapi.org/v2/everything", method: .get, parameters: parameters).responseJSON { response in
+        AF.request("https://newsapi.org/v2/top-headlines", method: .get, parameters: parameters).responseJSON { response in
             let data = response.data
             
             var newsResponse: NewsResponse
@@ -63,7 +65,7 @@ class HomeViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
+//        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
 

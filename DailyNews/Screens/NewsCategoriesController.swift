@@ -57,18 +57,17 @@ extension NewsCategoriesController: UICollectionViewDelegate, UICollectionViewDa
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let newsListVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        newsListVC.category = categories[indexPath.row]
+        self.navigationController?.pushViewController(newsListVC, animated: true)
+    }
+    
     
 }
 
 extension NewsCategoriesController : UICollectionViewDelegateFlowLayout {
-//    private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//        return CGSize(width: 300, height: 300)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-//    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width

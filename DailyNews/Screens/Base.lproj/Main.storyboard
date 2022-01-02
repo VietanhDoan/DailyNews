@@ -43,17 +43,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAILY NEWS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-KU-3FO">
-                                <rect key="frame" x="10" y="98" width="394" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="iA1-Vs-49V"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IYd-cI-EEa">
-                                <rect key="frame" x="0.0" y="153" width="414" height="709"/>
+                                <rect key="frame" x="0.0" y="90" width="414" height="772"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -63,10 +54,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="IYd-cI-EEa" secondAttribute="bottom" id="2us-L2-wrw"/>
                             <constraint firstItem="IYd-cI-EEa" firstAttribute="leading" secondItem="ItU-rX-NCX" secondAttribute="leading" id="FwK-re-hNW"/>
                             <constraint firstAttribute="trailing" secondItem="IYd-cI-EEa" secondAttribute="trailing" id="Pxz-fG-x2C"/>
-                            <constraint firstItem="wkc-SE-IVa" firstAttribute="trailing" secondItem="gQT-KU-3FO" secondAttribute="trailing" constant="10" id="QrQ-M4-2Ny"/>
-                            <constraint firstItem="gQT-KU-3FO" firstAttribute="leading" secondItem="wkc-SE-IVa" secondAttribute="leading" constant="10" id="XkJ-kL-H7y"/>
-                            <constraint firstItem="gQT-KU-3FO" firstAttribute="top" secondItem="wkc-SE-IVa" secondAttribute="top" constant="10" id="cHB-IO-avW"/>
-                            <constraint firstItem="IYd-cI-EEa" firstAttribute="top" secondItem="gQT-KU-3FO" secondAttribute="bottom" constant="5" id="pL5-ab-8v2"/>
+                            <constraint firstItem="IYd-cI-EEa" firstAttribute="top" secondItem="wkc-SE-IVa" secondAttribute="top" constant="2" id="gsw-Eg-AXq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I8L-oS-fWU"/>
