@@ -97,7 +97,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G61-DH-cA3">
                                 <rect key="frame" x="0.0" y="142" width="414" height="720"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.95698499619999999" green="0.91834593760000005" blue="0.73182089569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2ge-tm-ebV">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -115,7 +115,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CUJ-XM-4Fh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.95698499619999999" green="0.91834593760000005" blue="0.73182089569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="cgP-Zp-wh2" firstAttribute="centerX" secondItem="wJC-yf-NxV" secondAttribute="centerX" id="7xq-21-neH"/>
                             <constraint firstItem="G61-DH-cA3" firstAttribute="top" secondItem="cgP-Zp-wh2" secondAttribute="bottom" constant="4" id="CM2-wQ-pjm"/>
