@@ -52,7 +52,7 @@ extension NewsCategoriesController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : NewsCategoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCategoryCell", for: indexPath) as! NewsCategoryCell
-//        cell.backgroundColor = UIColor.green
+        cell.categoryTitle.text = categories[indexPath.row].uppercased()
         cell.categoryImage.image = UIImage(named: categories[indexPath.row])
         return cell
     }
@@ -73,7 +73,7 @@ extension NewsCategoriesController : UICollectionViewDelegateFlowLayout {
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
         let cellSize : CGFloat = screenWidth / 2.0
-        return CGSize(width: cellSize, height: cellSize)
+        return CGSize(width: cellSize, height: cellSize + 25)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

@@ -9,7 +9,9 @@ import UIKit
 
 class NewsCategoryCell: UICollectionViewCell {
 
+    @IBOutlet weak var categoryTitle: UILabel!
     @IBOutlet weak var categoryImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
