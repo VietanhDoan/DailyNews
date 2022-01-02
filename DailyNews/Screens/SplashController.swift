@@ -14,7 +14,8 @@ class SplashController: UIViewController {
         
         // Open Home screen
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+//            let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+            let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "NewsCategoriesController") as! NewsCategoriesController
             self.navigationController?.pushViewController(homeVC, animated: true)
         }
     }
