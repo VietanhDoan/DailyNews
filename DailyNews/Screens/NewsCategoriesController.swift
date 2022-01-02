@@ -10,6 +10,9 @@ import UIKit
 class NewsCategoriesController: UIViewController {
     
     @IBOutlet weak var searchButton: UIImageView!
+    @IBOutlet weak var collectionNewsCategories: UICollectionView!
+    
+    let categories = ["business", "entertainment", "health", "science", "sports", "technology"]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,6 +25,10 @@ class NewsCategoriesController: UIViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
             searchButton.isUserInteractionEnabled = true
             searchButton.addGestureRecognizer(tapGestureRecognizer)
+        
+        collectionNewsCategories.delegate = self
+        collectionNewsCategories.dataSource = self
+        collectionNewsCategories.register(UINib(nibName: "NewsCategoryCell", bundle: nil), forCellWithReuseIdentifier: "NewsCategoryCell")
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
@@ -35,5 +42,30 @@ class NewsCategoriesController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+}
+
+extension NewsCategoriesController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return categories.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell : NewsCategoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCategoryCell", for: indexPath) as! NewsCategoryCell
+//        cell.backgroundColor = UIColor.green
+        cell.categoryImage.image = UIImage(named: categories[indexPath.row])
+        return cell
+    }
+    
+    
+}
+
+extension NewsCategoriesController : UICollectionViewDelegateFlowLayout {
+    private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: 300, height: 300)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
 }

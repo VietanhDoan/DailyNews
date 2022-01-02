@@ -129,6 +129,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="fZc-jE-N3a"/>
                     <connections>
+                        <outlet property="collectionNewsCategories" destination="G61-DH-cA3" id="AI3-Y5-L83"/>
                         <outlet property="searchButton" destination="dOr-t2-cTL" id="xiv-mC-ADD"/>
                     </connections>
                 </viewController>
