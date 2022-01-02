@@ -87,7 +87,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAILY NEWS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgP-Zp-wh2">
-                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <rect key="frame" x="127.5" y="88" width="159" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="SHI-aB-Pq4"/>
                                 </constraints>
@@ -106,24 +106,51 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="dOr-t2-cTL">
+                                <rect key="frame" x="370" y="96" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="NQB-NE-VL2"/>
+                                    <constraint firstAttribute="height" constant="34" id="VNK-QV-qhz"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CUJ-XM-4Fh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="cgP-Zp-wh2" firstAttribute="centerX" secondItem="wJC-yf-NxV" secondAttribute="centerX" id="7xq-21-neH"/>
                             <constraint firstItem="G61-DH-cA3" firstAttribute="top" secondItem="cgP-Zp-wh2" secondAttribute="bottom" constant="4" id="CM2-wQ-pjm"/>
+                            <constraint firstItem="dOr-t2-cTL" firstAttribute="top" secondItem="CUJ-XM-4Fh" secondAttribute="top" constant="8" id="N2w-qz-Ieb"/>
                             <constraint firstItem="cgP-Zp-wh2" firstAttribute="top" secondItem="CUJ-XM-4Fh" secondAttribute="top" id="Pr7-oJ-UJN"/>
                             <constraint firstItem="G61-DH-cA3" firstAttribute="leading" secondItem="CUJ-XM-4Fh" secondAttribute="leading" id="TXC-g6-9KQ"/>
+                            <constraint firstItem="CUJ-XM-4Fh" firstAttribute="trailing" secondItem="dOr-t2-cTL" secondAttribute="trailing" constant="10" id="UGK-us-lpg"/>
                             <constraint firstItem="CUJ-XM-4Fh" firstAttribute="bottom" secondItem="G61-DH-cA3" secondAttribute="bottom" id="V2T-uw-W0H"/>
-                            <constraint firstItem="cgP-Zp-wh2" firstAttribute="trailing" secondItem="CUJ-XM-4Fh" secondAttribute="trailing" id="eln-4h-Hkz"/>
                             <constraint firstItem="CUJ-XM-4Fh" firstAttribute="trailing" secondItem="G61-DH-cA3" secondAttribute="trailing" id="gFr-ZY-meq"/>
-                            <constraint firstItem="cgP-Zp-wh2" firstAttribute="leading" secondItem="CUJ-XM-4Fh" secondAttribute="leading" id="wwa-t0-IbR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fZc-jE-N3a"/>
+                    <connections>
+                        <outlet property="searchButton" destination="dOr-t2-cTL" id="xiv-mC-ADD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZvZ-HN-6aN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2797" y="927"/>
+            <point key="canvasLocation" x="2794.202898550725" y="926.78571428571422"/>
+        </scene>
+        <!--Search Controller-->
+        <scene sceneID="rln-P3-yUa">
+            <objects>
+                <viewController storyboardIdentifier="SearchController" id="yV5-dg-4V1" customClass="SearchController" customModule="DailyNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gTI-Nq-gwu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ZJ0-U2-LwS"/>
+                        <color key="backgroundColor" red="0.44027056583424207" green="0.36804395796006573" blue="0.12086997667375889" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fSt-zW-cyc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mKg-vm-cn0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4689.8550724637689" y="926.78571428571422"/>
         </scene>
         <!--News Detail Controller-->
         <scene sceneID="uLi-7B-O6T">
@@ -236,6 +263,7 @@
     </scenes>
     <resources>
         <image name="Newspaper" width="2048" height="2048"/>
+        <image name="search" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
