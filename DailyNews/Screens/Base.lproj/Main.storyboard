@@ -93,7 +93,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Mv-3V-sCD">
-                                <rect key="frame" x="30" y="400" width="354" height="452"/>
+                                <rect key="frame" x="30" y="400" width="354" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -111,7 +111,6 @@
                         <viewLayoutGuide key="safeArea" id="gcO-Q7-MSO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="3Mv-3V-sCD" secondAttribute="bottom" constant="10" id="1Lt-yv-XHI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ksp-wh-MnP" secondAttribute="trailing" id="5MI-pT-al1"/>
                             <constraint firstItem="WwF-hl-eTN" firstAttribute="leading" secondItem="vvN-mJ-fRK" secondAttribute="leadingMargin" constant="10" id="6Vj-Tg-AMO"/>
                             <constraint firstItem="Ksp-wh-MnP" firstAttribute="top" secondItem="WwF-hl-eTN" secondAttribute="bottom" constant="8" id="EM0-uP-Qev"/>
