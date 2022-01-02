@@ -87,21 +87,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WwF-hl-eTN">
-                                <rect key="frame" x="30" y="44" width="354" height="240"/>
+                                <rect key="frame" x="30" y="44" width="354" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="0aR-wn-6Jn"/>
+                                    <constraint firstAttribute="height" constant="180" id="0aR-wn-6Jn"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Mv-3V-sCD">
-                                <rect key="frame" x="30" y="400" width="354" height="20.5"/>
+                                <rect key="frame" x="30" y="290" width="354" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksp-wh-MnP">
-                                <rect key="frame" x="20" y="292" width="374" height="100"/>
+                                <rect key="frame" x="20" y="232" width="374" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="hai-od-jgh"/>
+                                    <constraint firstAttribute="height" constant="50" id="hai-od-jgh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <nil key="textColor"/>
