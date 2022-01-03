@@ -23,6 +23,7 @@ class WebViewController: UIViewController {
 
         view.addSubview(webViewNews)
         
+        print("url: \(urlNews)")
         webViewNews.load(NSURLRequest(url: NSURL(string: urlNews)! as URL) as URLRequest)
     }
 }

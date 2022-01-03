@@ -14,6 +14,7 @@ class NewsCategoryCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        categoryImage.layer.cornerRadius = 15.0
     }
 
 }
