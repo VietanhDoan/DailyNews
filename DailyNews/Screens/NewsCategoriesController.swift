@@ -52,7 +52,7 @@ extension NewsCategoriesController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : NewsCategoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCategoryCell", for: indexPath) as! NewsCategoryCell
-        cell.categoryTitle.text = categories[indexPath.row].uppercased()
+        cell.categoryTitle.text = categories[indexPath.row].capitalizingFirstLetter()
         cell.categoryImage.image = UIImage(named: categories[indexPath.row])
         return cell
     }
