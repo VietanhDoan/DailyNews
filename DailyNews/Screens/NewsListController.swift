@@ -41,18 +41,18 @@ class NewsListController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         var parameters : [String: String] = [:]
-        let domain = "https://newsapi.org/v2/"
-        var apiPath = ""
+        let baseURL = "https://newsapi.org/v2/"
+        var endpoint = ""
         
         if (category != "") {
             parameters = ["category": category, "country": "us", "apiKey": apiKey]
-            apiPath = domain + "top-headlines"
+            endpoint = baseURL + "top-headlines"
         } else {
             parameters = ["q": keyword, "apiKey": apiKey, "from": fromDate, "to": toDate]
-            apiPath = domain + "everything"
+            endpoint = baseURL + "everything"
         }
         
-        AF.request(apiPath, method: .get, parameters: parameters).debugLog().responseJSON { response in
+        AF.request(endpoint, method: .get, parameters: parameters).debugLog().responseJSON { response in
             let data = response.data
             
             var newsResponse: NewsResponse
