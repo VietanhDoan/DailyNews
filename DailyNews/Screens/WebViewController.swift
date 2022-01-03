@@ -10,12 +10,18 @@ import WebKit
 
 class WebViewController: UIViewController {
     
-    @IBOutlet weak var webViewNews: WKWebView!
     
     var urlNews = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let configuration = WKWebViewConfiguration()
+        configuration.allowsInlineMediaPlayback = true
+
+        let webViewNews = WKWebView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height), configuration: configuration)
+
+        view.addSubview(webViewNews)
         
         webViewNews.load(NSURLRequest(url: NSURL(string: urlNews)! as URL) as URLRequest)
     }
