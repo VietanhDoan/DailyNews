@@ -9,11 +9,10 @@ import UIKit
 import Alamofire
 import SDWebImage
 
-class HomeViewController: UIViewController {
+class NewsListController: UIViewController {
 
     @IBOutlet weak var newsTableView: UITableView!
     
-    let animals: [String] = ["Horse", "Cow", "Camel", "Sheep", "Goat"]
     let cellReuseIdentifier = "NewsTableViewCell"
     var listNews : [Article] = []
     
@@ -24,6 +23,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
+        self.navigationItem.title = category.capitalizingFirstLetter() + " news"
         newsTableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
         newsTableView.delegate = self
         newsTableView.dataSource = self
@@ -31,9 +31,8 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        navigationController?.setNavigationBarHidden(true, animated: animated)
         
-        let parameters = ["category": category, "apiKey": "8cda2c5ccb064475946211d4fb8523e7"]
+        let parameters = ["category": category, "country": "us", "apiKey": "8cda2c5ccb064475946211d4fb8523e7"]
         
         AF.request("https://newsapi.org/v2/top-headlines", method: .get, parameters: parameters).responseJSON { response in
             let data = response.data
@@ -72,7 +71,7 @@ class HomeViewController: UIViewController {
 }
 
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension NewsListController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.listNews.count
     }

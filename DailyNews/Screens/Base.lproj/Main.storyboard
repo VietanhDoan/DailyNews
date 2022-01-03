@@ -35,10 +35,10 @@
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="88.392857142857139"/>
         </scene>
-        <!--Home View Controller-->
+        <!--News List Controller-->
         <scene sceneID="dk8-GA-ahL">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="fDM-q6-IxY" customClass="HomeViewController" customModule="DailyNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="fDM-q6-IxY" customClass="NewsListController" customModule="DailyNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ItU-rX-NCX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,16 +238,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Mv-3V-sCD">
-                                <rect key="frame" x="30" y="290" width="354" height="20.5"/>
+                                <rect key="frame" x="30" y="260.5" width="354" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksp-wh-MnP">
-                                <rect key="frame" x="20" y="232" width="374" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="hai-od-jgh"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="232" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

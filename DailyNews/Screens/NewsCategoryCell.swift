@@ -14,8 +14,6 @@ class NewsCategoryCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        categoryImage.image = UIImage(named:"sports")
     }
 
 }

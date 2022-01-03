@@ -59,7 +59,7 @@ extension NewsCategoriesController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let newsListVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        let newsListVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! NewsListController
         newsListVC.category = categories[indexPath.row]
         self.navigationController?.pushViewController(newsListVC, animated: true)
     }
