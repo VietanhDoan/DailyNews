@@ -34,7 +34,7 @@ class NewsListController: UIViewController {
         
         let parameters = ["category": category, "country": "us", "apiKey": "8cda2c5ccb064475946211d4fb8523e7"]
         
-        AF.request("https://newsapi.org/v2/top-headlines", method: .get, parameters: parameters).responseJSON { response in
+        AF.request("https://newsapi.org/v2/top-headlines", method: .get, parameters: parameters).debugLog().responseJSON { response in
             let data = response.data
             
             var newsResponse: NewsResponse
@@ -79,7 +79,12 @@ extension NewsListController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = newsTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! NewsTableViewCell
         cell.labelNewsTitle.text = self.listNews[indexPath.row].title
-        cell.labelNewsDescription.text = self.listNews[indexPath.row].description
+        
+        var newsContent = self.listNews[indexPath.row].description
+        if (newsContent == nil) {
+            newsContent = self.listNews[indexPath.row].content
+        }
+        cell.labelNewsDescription.text = newsContent
         cell.imageViewNewsImage.sd_setImage(with: URL(string: self.listNews[indexPath.row].urlToImage ?? ""), completed: nil)
         return cell
     }
