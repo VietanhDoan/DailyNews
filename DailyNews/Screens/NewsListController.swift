@@ -18,7 +18,10 @@ class NewsListController: UIViewController {
     
     let endpointSample = "https://newsapi.org/v2/everything?q=bitcoin&apiKey=8cda2c5ccb064475946211d4fb8523e7"
     
-    var category : String! = ""
+    var category = ""
+    var keyword = ""
+    var fromDate = ""
+    var toDate = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +39,48 @@ class NewsListController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if (category != "") {
+            getNewsByCategories()
+        } else {
+            getNewsByKeywords()
+        }
+    }
+    
+    func getNewsByCategories() -> Void {
         let parameters = ["category": category, "country": "us", "apiKey": "8cda2c5ccb064475946211d4fb8523e7"]
         
         AF.request("https://newsapi.org/v2/top-headlines", method: .get, parameters: parameters).debugLog().responseJSON { response in
+            let data = response.data
+            
+            var newsResponse: NewsResponse
+            if let contentType = response.response?.allHeaderFields["Content-Type"] as? String {
+                if let _ = contentType.range(of: "application/json") {
+                    do {
+                        var json: Any? = nil
+                        
+                        if data!.count > 0 {
+                            json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+                        }
+                        
+                        if let jsonData = json as? [String: Any] {
+                            newsResponse = NewsResponse(info: jsonData)
+                            self.listNews = newsResponse.articles ?? []
+                            self.newsTableView.reloadData()
+                        }
+                    } catch _ as NSError {
+                        print("error")
+                    }
+                } else {
+                    print("error")
+                }
+            }
+        }
+    }
+    
+    func getNewsByKeywords() -> Void {
+        let parameters = ["q": keyword, "apiKey": "8cda2c5ccb064475946211d4fb8523e7"]
+        
+        AF.request("https://newsapi.org/v2/everything", method: .get, parameters: parameters).debugLog().responseJSON { response in
             let data = response.data
             
             var newsResponse: NewsResponse

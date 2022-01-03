@@ -10,9 +10,20 @@ import UIKit
 class SearchController: UIViewController {
     
     @IBOutlet weak var buttonSubmit: UIButton!
+    @IBOutlet weak var textViewKeywords: UITextView!
+    @IBOutlet weak var datePickerFrom: UIDatePicker!
+    @IBOutlet weak var datePickerTo: UIDatePicker!
     
     @IBAction func submit(_ sender: Any) {
-        let searchResultVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchResultsController") as! SearchResultsController
+        if (textViewKeywords.text == "") {
+            let alert = UIAlertController(title: "Cannot search", message: "Please input keyword to search news", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        let searchResultVC = self.storyboard?.instantiateViewController(withIdentifier: "NewsListController") as! NewsListController
+        searchResultVC.keyword = textViewKeywords.text
         self.navigationController?.pushViewController(searchResultVC, animated: true)
     }
     

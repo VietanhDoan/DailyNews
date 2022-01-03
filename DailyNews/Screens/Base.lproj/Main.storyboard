@@ -38,7 +38,7 @@
         <!--News List Controller-->
         <scene sceneID="dk8-GA-ahL">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="fDM-q6-IxY" customClass="NewsListController" customModule="DailyNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsListController" id="fDM-q6-IxY" customClass="NewsListController" customModule="DailyNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ItU-rX-NCX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,6 +226,9 @@
                     <navigationItem key="navigationItem" id="fSt-zW-cyc"/>
                     <connections>
                         <outlet property="buttonSubmit" destination="ogB-Oy-z6a" id="A2u-Q8-Grl"/>
+                        <outlet property="datePickerFrom" destination="gDR-r6-Vy9" id="UeI-Ll-ZYP"/>
+                        <outlet property="datePickerTo" destination="gdC-6A-Khb" id="zJC-ku-euf"/>
+                        <outlet property="textViewKeywords" destination="FrB-2o-e0W" id="mvv-UG-YrS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKg-vm-cn0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
