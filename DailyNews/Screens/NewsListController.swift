@@ -16,6 +16,8 @@ class NewsListController: UIViewController {
     let cellReuseIdentifier = "NewsTableViewCell"
     var listNews : [Article] = []
     
+    let apiKey = "8cda2c5ccb064475946211d4fb8523e7"
+    
     let endpointSample = "https://newsapi.org/v2/everything?q=bitcoin&apiKey=8cda2c5ccb064475946211d4fb8523e7"
     
     var category = ""
@@ -47,7 +49,7 @@ class NewsListController: UIViewController {
     }
     
     func getNewsByCategories() -> Void {
-        let parameters = ["category": category, "country": "us", "apiKey": "8cda2c5ccb064475946211d4fb8523e7"]
+        let parameters = ["category": category, "country": "us", "apiKey": apiKey]
         
         AF.request("https://newsapi.org/v2/top-headlines", method: .get, parameters: parameters).debugLog().responseJSON { response in
             let data = response.data
@@ -78,7 +80,7 @@ class NewsListController: UIViewController {
     }
     
     func getNewsByKeywords() -> Void {
-        let parameters = ["q": keyword, "apiKey": "8cda2c5ccb064475946211d4fb8523e7"]
+        let parameters = ["q": keyword, "apiKey": apiKey]
         
         AF.request("https://newsapi.org/v2/everything", method: .get, parameters: parameters).debugLog().responseJSON { response in
             let data = response.data
