@@ -18,6 +18,9 @@ class SearchController: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = "Search"
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.89, green: 0.41, blue: 0.30, alpha: 1.00) // orange
         
     }
     

@@ -23,7 +23,11 @@ class NewsListController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        self.navigationItem.title = category.capitalizingFirstLetter() + " news"
+        self.navigationItem.title = category.capitalizingFirstLetter()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.89, green: 0.41, blue: 0.30, alpha: 1.00) // orange
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
         newsTableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
         newsTableView.delegate = self
         newsTableView.dataSource = self

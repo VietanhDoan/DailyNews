@@ -71,7 +71,7 @@ extension NewsCategoriesController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
-        let cellSize : CGFloat = screenWidth / 2.0
+        let cellSize : CGFloat = (screenWidth) / 2.0
         return CGSize(width: cellSize, height: cellSize + 25)
     }
     
@@ -84,6 +84,6 @@ extension NewsCategoriesController : UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 15, left: 0, bottom: 0.0, right: 0.0)
+        return UIEdgeInsets(top: 15, left: 0, bottom: 6, right: 0)
     }
 }
