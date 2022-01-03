@@ -95,28 +95,20 @@ extension NewsListController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = newsTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! NewsTableViewCell
-        cell.labelNewsTitle.text = self.listNews[indexPath.row].title
-        
-        var newsContent = self.listNews[indexPath.row].description
-        if (newsContent == nil) {
-            newsContent = self.listNews[indexPath.row].content
-        }
-        cell.labelNewsDescription.text = newsContent
-        cell.imageViewNewsImage.sd_setImage(with: URL(string: self.listNews[indexPath.row].urlToImage ?? ""), completed: nil)
+        cell.newsTitle.text = self.listNews[indexPath.row].title
+        cell.newsImage.sd_setImage(with: URL(string: self.listNews[indexPath.row].urlToImage ?? ""), completed: nil)
         return cell
     }
 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 120
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let newsDetailController = self.storyboard?.instantiateViewController(withIdentifier: "NewsDetailController") as! NewsDetailController
         let webViewController = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
         let article = self.listNews[indexPath.row]
         webViewController.urlNews = article.url ?? ""
-//        newsDetailController.article = article
         self.navigationController?.pushViewController(webViewController, animated: true)
     }
 
