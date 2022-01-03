@@ -95,10 +95,12 @@ extension NewsListController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let newsDetailController = self.storyboard?.instantiateViewController(withIdentifier: "NewsDetailController") as! NewsDetailController
+//        let newsDetailController = self.storyboard?.instantiateViewController(withIdentifier: "NewsDetailController") as! NewsDetailController
+        let webViewController = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
         let article = self.listNews[indexPath.row]
-        newsDetailController.article = article
-        self.navigationController?.pushViewController(newsDetailController, animated: true)
+        webViewController.urlNews = article.url ?? ""
+//        newsDetailController.article = article
+        self.navigationController?.pushViewController(webViewController, animated: true)
     }
 
 }
