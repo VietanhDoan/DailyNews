@@ -80,7 +80,7 @@ class NewsListController: UIViewController {
     }
     
     func getNewsByKeywords() -> Void {
-        let parameters = ["q": keyword, "apiKey": apiKey]
+        let parameters = ["q": keyword, "apiKey": apiKey, "from": fromDate, "to": toDate]
         
         AF.request("https://newsapi.org/v2/everything", method: .get, parameters: parameters).debugLog().responseJSON { response in
             let data = response.data
