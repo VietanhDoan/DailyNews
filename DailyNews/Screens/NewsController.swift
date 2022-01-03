@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 import SDWebImage
 
-class NewsListController: UIViewController {
+class NewsController: UIViewController {
 
     @IBOutlet weak var newsTableView: UITableView!
     
@@ -89,7 +89,7 @@ class NewsListController: UIViewController {
 }
 
 
-extension NewsListController: UITableViewDelegate, UITableViewDataSource {
+extension NewsController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.listNews.count
     }

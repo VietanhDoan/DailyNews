@@ -29,7 +29,7 @@ class SearchController: UIViewController {
             return
         }
         
-        let searchResultVC = self.storyboard?.instantiateViewController(withIdentifier: "NewsListController") as! NewsListController
+        let searchResultVC = self.storyboard?.instantiateViewController(withIdentifier: "NewsListController") as! NewsController
         searchResultVC.keyword = textViewKeywords.text
         
         let dateFormatter = DateFormatter()

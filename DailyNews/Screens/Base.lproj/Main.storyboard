@@ -35,10 +35,10 @@
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="88.392857142857139"/>
         </scene>
-        <!--News List Controller-->
+        <!--News Controller-->
         <scene sceneID="dk8-GA-ahL">
             <objects>
-                <viewController storyboardIdentifier="NewsListController" id="fDM-q6-IxY" customClass="NewsListController" customModule="DailyNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsListController" id="fDM-q6-IxY" customClass="NewsController" customModule="DailyNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ItU-rX-NCX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
